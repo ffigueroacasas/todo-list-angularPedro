@@ -1,0 +1,9 @@
+<div class="flex-item">
+  <span>{{item+1}} - </span>
+  <span class="description">{{item.description}}</span>
+</div>
+<div class="flex-item">
+  <button (click)="changeState(item)" class="state">
+  {{item.isCompleted ? 'Completado' : 'Incompleto'}}</button>
+  <button *ngIf="item.isCompleted==false" (click)="removeItem(index)">X</button>
+</div>

@@ -1,0 +1,9 @@
+<h1>To Do List</h1>
+
+<div class="item">
+  <app-new-item [items]="this.items" (addNewItem)="addItem($event)"></app-new-item>
+</div>
+<div class="item" [ngClass]="{done:this.item.isCompleted==true}" *ngFor="let item of items; let i=index">
+  <app-list-item [item]="item" [index]="i" (removeItemClick)="removeItem($event)"></app-list-item>
+
+</div>
